@@ -11,7 +11,7 @@ The game logic is simple: connect four of the checkers in a row while preventing
 * CSS
 * JavaScript 
 
-Screen Shot 2022-11-30 at 18.20.56.png
+/Users/joshwu/seir-1114/unit1/Project1/Screen Shot 2022-11-30 at 18.20.56.png
 
 ## MVP 
 
