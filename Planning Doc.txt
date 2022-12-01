@@ -1,0 +1,3 @@
+Day 1 Thursday Dec 1
+# Layout html format 
+# Basic CSS to center text/game board
