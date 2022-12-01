@@ -20,7 +20,6 @@ The game logic is simple: connect four of the checkers in a row or diagonally wh
 * Set winning conditions and 2 colors for players 
 * Create a functioning button that will reset the game without having to refreshing the window
 
-<img src='wireframe.png' alt='wireframe'>
 
 ## Stretch Goals
 
