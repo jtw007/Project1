@@ -1,3 +1,9 @@
-Day 1 Thursday Dec 1
+Psuedo code
 # Layout html format 
-# Basic CSS to center text/game board
+    -create a container that will contain 6 rows x 7 columns
+    -create 42 individual squares within the container without creating 42 divs in html 
+    -
+# JS 
+    -create function that can console.log when specific square is clicked
+    -
+# Basic CSS to center text/game board 
