@@ -3,8 +3,13 @@ Psuedo code
     -create a container that will contain 6 rows x 7 columns
     -create 42 individual squares within the container without creating 42 divs in html 
     -
+
 # JS 
     -create function that can console.log when specific square is clicked
     -create function that display messages for which player has won
     -create function that distinguishes the color of player 1 from player 2
+    -create function that alternates between player 1 and 2 so that once player 1 clicks a tile, they cannot click another until player 2 clicks a tile and vice versa 
+    -create two classes in CSS with red and black backgrounds, using function to change tile color when clicked 
+
 # Basic CSS to center text/game board 
+    -stretch goal: using CSS concepts to make game board more visually pleasing to look at
