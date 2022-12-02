@@ -31,3 +31,6 @@ The game logic is simple: connect four of the checkers in a row or diagonally wh
 * Coding the winning conditions along with a tie game as I also had trouble with solving this issue during TTT. 
 * Changing the appearance of the square once clicked on so it corresponds with the correct color 
 * Alternate between 2 players' choices
+
+## Sources/Inspiration 
+* 

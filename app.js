@@ -1,8 +1,10 @@
-console.log('JS FILE IS LINKED')
+// console.log('JS FILE IS LINKED')
+
 //----DOM EVENT LISTENER-----
 document.addEventListener('DOMContentLoaded', () => {
     addH1()
     createBtn()
+    
 })
 
 
@@ -36,24 +38,23 @@ const createBtn = () => {
     console.log(e.target)  
     })
 })
-
 }
 
 
 //-----CLICK EVENT LISTENERS-----
-
-
     //---RESET BUTTON----
 resetBtn.addEventListener('click', () => {
     const selector = document.querySelectorAll('.tile')
     selector.forEach(tile => {
-        
+        resetBtn.reset()
     })
+    console.log('resets')
 })
 
 
+
 //---WINNING CONDITIONS-----
-    //KEEP AN ARRAY 
+//KEEP AN ARRAY 
 
 
 
@@ -67,5 +68,14 @@ resetBtn.addEventListener('click', () => {
         //     document.querySelector('#game-container').appendChild(div)
         // }
         
-// addDiv()
-
+        // addDiv()
+        
+        
+//     })
+// resetBtn.addEventListener('click', () => {
+//     Array.from(tile).forEach(tileElement => {
+//         tileElement.addEventListener('click', (e) => {
+//             tile.display.backgroundColor = 'white'
+//             console.log('reset works')
+//         })
+// })
