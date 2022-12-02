@@ -1,15 +1,16 @@
 console.log('JS FILE IS LINKED')
-//---GLOBAL VARIABLES-----
-tile = document.querySelector('.tile')
-container = document.querySelector('.game-container')
-buttons = document.querySelector('#button')
-resetBtn = document.querySelector('#reset')
-
 //----DOM EVENT LISTENER-----
 document.addEventListener('DOMContentLoaded', () => {
     addH1()
     createBtn()
 })
+
+
+//---GLOBAL VARIABLES-----
+container = document.querySelector('.game-container')
+resetBtn = document.querySelector('#reset')
+let tile 
+
 
 //----H1 TITLE-----
 const addH1 = () => {
@@ -18,21 +19,29 @@ const addH1 = () => {
     document.querySelector('body').prepend(h1)
 }
 
-//----CREATE 42 BUTTONS 
+
+//----CREATE 42 BUTTONS FOR GAME-------
+//how to assign btns the element of ID and increment? 
 const createBtn = () => {
-    for (let i = 0; i <42; i++) {
-        const btns = document.createElement('button')
+    for (let i = 0; i < 42; i++) {
+        const btns = document.createElement('button')  
         btns.classList.add('tile')
+        btns.id = i+1
         container.appendChild(btns) 
     }
+    tile = document.querySelectorAll('.tile') //node list 
+        //array.from creates array from node list 
+    Array.from(tile).forEach(tileElement => {
+    tileElement.addEventListener('click', (e) => {
+    console.log(e.target)  
+    })
+})
+
 }
 
 
-
 //-----CLICK EVENT LISTENERS-----
-buttons.addEventListener('click', (e) => {
-    console.log('e.target')
-})
+
 
     //---RESET BUTTON----
 resetBtn.addEventListener('click', () => {
@@ -43,7 +52,8 @@ resetBtn.addEventListener('click', () => {
 })
 
 
-
+//---WINNING CONDITIONS-----
+    //KEEP AN ARRAY 
 
 
 
