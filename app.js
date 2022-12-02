@@ -46,10 +46,13 @@ const createBtn = () => {
 resetBtn.addEventListener('click', () => {
     const selector = document.querySelectorAll('.tile')
     selector.forEach(tile => {
-        resetBtn.reset()
+        
     })
-    console.log('resets')
+    console.log('reset button console.logs')
 })
+
+
+
 
 
 
@@ -58,19 +61,25 @@ resetBtn.addEventListener('click', () => {
 
 
 
-//--------SCRAPPED CODE/DIDN'T WORK-------------
+
+
+
+//!!!!--------SCRAPPED CODE/DIDN'T WORK-------------!!!!
+// const restartGame = tile
+// restartGame.addEventListener('click', () => {
+//     console.log('restart works')
+// })
+
 // const addDiv = () => {
-    //     for (i = 0; i <42; i++) {
-        //     const div = document.createElement('div')
-        //     div.innerText = ' ' 
-        //     }
+//     for (i = 0; i <42; i++) {
+//         const div = document.createElement('div')
+//         div.innerText = ' ' 
+//         }
+//     document.querySelector('#game-container').appendChild(div)
+// }
         
-        //     document.querySelector('#game-container').appendChild(div)
-        // }
-        
-        // addDiv()
-        
-        
+//addDiv()
+//resetBtn.reset()              
 //     })
 // resetBtn.addEventListener('click', () => {
 //     Array.from(tile).forEach(tileElement => {
@@ -79,3 +88,8 @@ resetBtn.addEventListener('click', () => {
 //             console.log('reset works')
 //         })
 // })
+
+// function resetGame() {
+//     document.querySelector('tile').reset()
+//     console.log('reset works')
+// }
