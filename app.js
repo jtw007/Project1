@@ -34,12 +34,13 @@ const createBtn = () => {
         //array.from creates array from node list 
     Array.from(tile).forEach(tileElement => {
     tileElement.addEventListener('click', (e) => {
-        if (currentPlayer === 0) {
+        // currentPlayer = 0 then they are black. currentPlayer = 1 they are red
+        if (currentPlayer === 0 && e.target.classList !== 'player-two') {
             //on click the class of tile will change to .player-one with background color of black
             e.target.classList.add('player-one')
             e.target.innerText = 1
             changePlayer()
-        } else  {
+        } else if (e.target.classList !== 'player-one') {
             //the class of tile will change to .player-two with background color of red
             e.target.classList.add('player-two') 
             e.target.innerText = 2
@@ -63,7 +64,7 @@ createBtn()
 // ----PLAYER 1 AND 2 FUNCTIONS-------
     
     //function that will handle alternating between the players 
-    // currentPlayer = 0 then they are red. currentPlayer = 1 they are black
+    
 
 
 changePlayer = () => { 
