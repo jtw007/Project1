@@ -37,13 +37,21 @@ const createBtn = () => {
         if (currentPlayer === 0) {
             //on click the class of tile will change to .player-one with background color of black
             e.target.classList.add('player-one')
+            e.target.innerText = 1
             changePlayer()
-        } else {
+        } else  {
             //the class of tile will change to .player-two with background color of red
             e.target.classList.add('player-two') 
+            e.target.innerText = 2
             changePlayer()
         }
-        console.log(e.target)
+        // console.log(e.target)
+        const winArr = []
+        for (let i = 0; i < tile.length; i++) {
+            const color = tile[i].innerText
+            winArr.push(color) 
+        }
+        console.log(winArr)
     })
 })
 }
@@ -92,12 +100,7 @@ resetBtn.addEventListener('click', () => {
 //---WINNING CONDITIONS-----
     //KEEP AN ARRAY 
 
-const winArr = []
-for (let i = 0; i < tile.length; i++) {
-    const color = tile.length.innerText
-    winArr.push(color) 
-}
-console.log(winArr)
+
 
 
 
