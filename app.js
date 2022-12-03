@@ -89,10 +89,11 @@ changePlayer = () => {
 //-----CLICK EVENT LISTENERS-----
     //---RESET BUTTON----
         //something.grabs all the tiles then resets them back to orignal state or changes the background color to white
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', (reset) => {
     const selector = document.querySelectorAll('.tile')
     selector.forEach(tile => {
         tile.style.backgroundColor = 'white'
+        tile.innerText = ' '
     })
     // console.log('reset button console.logs')
 })

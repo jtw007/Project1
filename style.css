@@ -106,6 +106,7 @@ h1 {
 /* classes for player 1 and 2 */
 .player-one {
     background-color: black;
+    color: black;
 }
 
 .player-two {
