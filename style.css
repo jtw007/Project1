@@ -103,6 +103,13 @@ h1 {
     opacity: 1;
     cursor: pointer;
 }
+
+#display {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 25px;
+}
+
 /* classes for player 1 and 2 */
 .player-one {
     background-color: black;
