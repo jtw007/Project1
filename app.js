@@ -11,6 +11,14 @@ resetBtn = document.querySelector('#reset')
 display = document.querySelector('#display')
 let tile 
 let currentPlayer = 0
+const gameArr = [
+['','','','','','',''],
+['','','','','','',''],
+['','','','','','',''],
+['','','','','','',''],
+['','','','','','',''],
+['','','','','','',''],
+]
 
 
 //----H1 TITLE-----
@@ -30,7 +38,7 @@ const createBtn = () => {
     for (let i = 0; i < 42; i++) {
         const btns = document.createElement('button')  
         btns.classList.add('tile')
-        btns.id = 'num ' + [i]
+        btns.id = `num ${i}`
         btns.innerText = ' '
         // btns.innerText = 'num' + i
         container.appendChild(btns) 
@@ -52,26 +60,35 @@ const createBtn = () => {
             e.target.innerText = 2
             changePlayer()
         }
-        // console.log(e.target)
-        const winArr = []
+        console.log(e.target)
+        // const winArr = [] 
+        let row = 0
+        //variable tracking rows, starting row 0 top row
+                // i % 7 === 0 
         for (let i = 0; i < tile.length; i++) {
             const color = tile[i].innerText
-            winArr.push(color) 
+            const place = i % 7
+            if (place === 0 && i !== 0) {
+                row++
+            }
+            gameArr[row][place] = color
         }
-        console.log(winArr)
+        console.log(gameArr)
     })
 })
 }
 
+
+
+// winning array with all possible combinations, array of arrays [0 1 2 3]
     //function that will handle alternating between the players 
     
     //a function that will not allow a tile to be clicked once it is clicked
     
     //writing a function that only allows tiles in the bottom row to be first and only allow other tiles to be clicked if the tile below is clicked(colored in)
+        //only if tile below is clicked/colored in, you can click the one on top of it
 
-    //if tile below is clicked, you can click the one on top of it
-
-    //use classList to denote that a tile is taken when clicked on 
+    
 
 // ----DISPLAY MESSAGE-----
     //some stuff that starts the function
@@ -93,7 +110,8 @@ createBtn()
 resetBtn.addEventListener('click', () => {
     const selector = document.querySelectorAll('.tile')
     selector.forEach(tile => {
-        tile.style.backgroundColor = 'white'
+        tile.classList.remove('player-one', 'player-two')
+        // tile.style.backgroundColor = 'white'
         tile.innerText = ''
     })
     // console.log('reset button console.logs')
@@ -103,6 +121,8 @@ resetBtn.addEventListener('click', () => {
 
 //---WINNING CONDITIONS-----
     //KEEP AN ARRAY 
+    //write a function that will loop thru the array and determine when a player has won
+    //
 
 
 
