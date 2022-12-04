@@ -123,34 +123,45 @@ const createBtn = () => {
         btns.classList.add('tile')
         btns.id = i+1
         btns.innerText = ' '
-        // btns.innerText = i+1
-        container.appendChild(btns) 
-    }
+        btns.innerText = i+1
+        container.appendChild(btns)
+        //if statement that only allows for the bottom row (btn 36-41) to be clicked on first
+            // if (btns.id = 36 && btns.id <42) {
+            //         btns.classList.add('starter')
+            // }
+    } 
+        
     tile = document.querySelectorAll('.tile') //node list 
 
-        //array.from creates array from node list 
+    //array.from creates array from node list 
     Array.from(tile).forEach(tileElement => {
         tileElement.addEventListener('click', (e) => {
-            // ----PLAYER 1 AND 2 FUNCTIONS-------
-            // currentPlayer = 0 then they are black, currentPlayer = 1 they are red
-            if (currentPlayer === 0 && e.target.classList !== 'player-two') {
-                //on click the class of tile will change to .player-one with background color of black
-                e.target.classList.add('player-one')
-                e.target.disabled = true
-                e.target.innerText = 1
-                playerOne.push(Number(e.target.id))
-                console.log(playerOne)
-                changePlayer()
-            } else if (e.target.classList !== 'player-one') {
-                //the class of tile will change to .player-two with background color of red
-                e.target.classList.add('player-two') 
-                e.target.disabled = true
-                e.target.innerText = 2
-                playerTwo.push(Number(e.target.id))
-                console.log(playerTwo)
-                changePlayer()
-            }
-            //console.log(Number(e.target.id))
+            
+            
+                // ----PLAYER 1 AND 2 FUNCTIONS-------
+                // currentPlayer = 0 then they are black, currentPlayer = 1 they are red
+                if (currentPlayer === 0 && e.target.classList !== 'player-two') {
+                    //on click the class of tile will change to .player-one with background color of black
+                    //e.target.classList.contains('starter')
+                    e.target.classList.add('player-one')
+                    e.target.disabled = true
+                    e.target.innerText = 1
+                    playerOne.push(Number(e.target.id))
+                    console.log(playerOne)
+                    changePlayer()
+                } else if (e.target.classList !== 'player-one') {
+                    //the class of tile will change to .player-two with background color of red
+                    //e.target.classList.contains('starter')
+                    e.target.classList.add('player-two') 
+                    e.target.disabled = true
+                    e.target.innerText = 2
+                    playerTwo.push(Number(e.target.id))
+                    console.log(playerTwo)
+                    changePlayer()
+                }
+             
+            // console.log(Number(e.target.id))
+            console.log(e.target)
         })
     })
 }
@@ -159,7 +170,7 @@ const createBtn = () => {
 function winFunction () {
     //inside the winArr, for each value of i
     winArr.forEach((i) => {
-        //if 
+        //cycles thru winArr and if the values in playerOne or two array match the values in winArr (.every cycles thru array and returns boolean value)
         if (i.every((j)=> playerOne.includes(j))) {
             display.innerText = 'Black Player wins'
         } else if (i.every((j)=> playerOne.includes(j))) {
@@ -181,7 +192,9 @@ resetBtn.addEventListener('click', () => {
         tile.classList.remove('player-one', 'player-two')
         // tile.style.backgroundColor = 'white'
         tile.innerText = '' 
-        tile.disabled = false 
+        tile.disabled = false
+        playerOne = []
+        playerTwo= []
     })
     // console.log('reset button console.logs')   
 })
