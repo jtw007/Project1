@@ -110,6 +110,7 @@ const addH1 = () => {
     h1.innerText = 'Connect Four'
     document.querySelector('body').prepend(h1)
 }
+
 //---Change player funtion----
 changePlayer = () => { 
     // current player is 1, else player is 0 
@@ -123,12 +124,13 @@ const createBtn = () => {
         btns.classList.add('tile')
         btns.id = i+1
         btns.innerText = ' '
-        btns.innerText = i+1
+        // btns.innerText = i+1
         container.appendChild(btns)
         //if statement that only allows for the bottom row (btn 36-41) to be clicked on first
             // if (btns.id = 36 && btns.id <42) {
             //         btns.classList.add('starter')
             // }
+            
     } 
         
     tile = document.querySelectorAll('.tile') //node list 
@@ -172,10 +174,19 @@ function winFunction () {
     winArr.forEach((i) => {
         //cycles thru winArr and if the values in playerOne or two array match the values in winArr (.every cycles thru array and returns boolean value)
         if (i.every((j)=> playerOne.includes(j))) {
+            // tile.forEach((button) => {
+            //     button.setAttribute('disabled', 'true')
+            // }) 
             display.innerText = 'Black Player wins'
         } else if (i.every((j)=> playerOne.includes(j))) {
+            // tile.forEach((button) => {
+            //     button.setAttribute('disabled', 'true')
+            // }) 
             display.innerText = 'Red Player wins'
         } else if (winArr === 42) {
+            // tile.forEach((button) => {
+            //     button.setAttribute('disabled', 'true')
+            // }) 
             display.innerText = 'Tie Game'
         }
     })
@@ -194,7 +205,8 @@ resetBtn.addEventListener('click', () => {
         tile.innerText = '' 
         tile.disabled = false
         playerOne = []
-        playerTwo= []
+        playerTwo = []
+        currentPlayer
     })
     // console.log('reset button console.logs')   
 })
