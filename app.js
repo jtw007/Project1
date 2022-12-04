@@ -204,8 +204,8 @@ resetBtn.addEventListener('click', () => {
         // tile.style.backgroundColor = 'white'
         tile.innerText = '' 
         tile.disabled = false
-        playerOne = []
-        playerTwo = []
+        playerOne 
+        playerTwo 
         currentPlayer
     })
     // console.log('reset button console.logs')   
