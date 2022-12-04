@@ -33,4 +33,5 @@ The game logic is simple: connect four of the checkers in a row or diagonally wh
 * Alternate between 2 players' choices
 
 ## Sources/Inspiration 
+* JS lines 160-170 credit: Jay Womack 
 * https://www.youtube.com/watch?v=aroYjgQH8Tw&t=1278s 

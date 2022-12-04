@@ -103,16 +103,14 @@ const winArr = [
     [11,17,23,29],
     [4,10,16,22]
 ]
-
-
-
+console.log(playerOne)
 //----H1 TITLE-----
 const addH1 = () => {
     const h1 = document.createElement('h1')
     h1.innerText = 'Connect Four'
     document.querySelector('body').prepend(h1)
 }
-
+//---Change player funtion----
 changePlayer = () => { 
     // current player is 1, else player is 0 
     currentPlayer = currentPlayer === 0 ? 1 : 0
@@ -153,72 +151,49 @@ const createBtn = () => {
                 changePlayer()
             }
             //console.log(Number(e.target.id))
-
         })
     })
 }
 
 //---WINNING CONDITIONS-----
-//if player 1's turn, only need to check if player 1 is winner. check the piece they played 
-    //starting from where piece was played and see all sides if there are 4 in a row
-    //ex: space 5 placed. check area around space 5
+function winFunction () {
+    //inside the winArr, for each value of i
+    winArr.forEach((i) => {
+        //if 
+        if (i.every((j)=> playerOne.includes(j))) {
+            display.innerText = 'Black Player wins'
+        } else if (i.every((j)=> playerOne.includes(j))) {
+            display.innerText = 'Red Player wins'
+        } else if (winArr === 42) {
+            display.innerText = 'Tie Game'
+        }
+    })
+}
 
-    //write a function that will loop thru the array and determine when a player has won
 
-//create check winner function 
-    //checking if player 1 has won after every turn
-    //take argument for which player is going
-    //check for player 1, player 2 winner 
-    //start with top row 
-
-    
-//a function that will not allow a tile to be clicked once it is clicked
-    
 //writing a function that only allows tiles in the bottom row to be first and only allow other tiles to be clicked if the tile below is clicked(colored in)
     //only if tile below is clicked/colored in, you can click the one on top of it
 
-    
-
-// ----DISPLAY MESSAGE-----
-    //some stuff that starts the function
-    //if player 1 wins, display "Black player has won". if player 2 wins, display "Red player has won"
-    display.innerText = 'Display works, hello there'
-
-
-
 //---RESET BUTTON----
 resetBtn.addEventListener('click', () => {
-    // const selector = document.querySelectorAll('.tile')
-    // selector.forEach(tile => {
-    //     tile.classList.remove('player-one', 'player-two')
-    //     // tile.style.backgroundColor = 'white'
-    //     tile.innerText = ''
-    // })
-    // console.log('reset button console.logs')
-    location.reload() //delete this later 
+    const selector = document.querySelectorAll('.tile')
+    selector.forEach(tile => {
+        tile.classList.remove('player-one', 'player-two')
+        // tile.style.backgroundColor = 'white'
+        tile.innerText = '' 
+        tile.disabled = false 
+    })
+    // console.log('reset button console.logs')   
 })
+
 
 
 //!---INVOKE FUNCTIONS SECTION-----
 addH1()
 createBtn()
+winFunction()
 
 
-
-
-
-            // let row = 0
-            // //variable tracking rows, starting row 0 top row
-            //         // i % 7 === 0 
-            // for (let i = 0; i < tile.length; i++) {
-            //     const color = tile[i].innerText
-            //     const place = i % 7
-            //     if (place === 0 && i !== 0) {
-            //         row++
-            //     }
-            //     gameArr[row][place] = color
-            // }
-            // console.log(gameArr)
 
 
 
