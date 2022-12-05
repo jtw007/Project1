@@ -196,9 +196,6 @@ function winFunction () {
             disableGame()
             display.innerText = 'Red Player wins'
         } else if (playerOne.length === 21 && playerTwo.length === 21 ) {
-            // tile.forEach((button) => {
-            //     button.setAttribute('disabled', 'true')
-            // }) 
             disableGame()
             display.innerText = 'Tie Game'
         }
@@ -221,7 +218,7 @@ resetBtn.addEventListener('click', () => {
         playerOne = []
         playerTwo = []
         enableGame()
-        // currentPlayer
+        
     })
     // console.log('reset button console.logs')   
 })
