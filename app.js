@@ -8,6 +8,7 @@ let tile
 let currentPlayer = 0
 let playerOne = []
 let playerTwo = []
+
 function disableGame()  { 
     tile.forEach(button => {
         button.disabled = true
@@ -18,7 +19,6 @@ function enableGame() {
         button.disabled = false
     })
 } 
-
 
 const winArr = [
 //west to east (24)
@@ -116,7 +116,9 @@ const winArr = [
     [4,10,16,22]
 ]
 
-// console.log(playerOne)
+// let enable = []
+
+
 //----H1 TITLE-----
 const addH1 = () => {
     const h1 = document.createElement('h1')
@@ -130,10 +132,7 @@ changePlayer = () => {
     currentPlayer = currentPlayer === 0 ? 1 : 0
 }
 
-//function that only allows for the bottom row (btn 36-41) to be clicked on first
-            // if (btns.id = 36 && btns.id < 42) {
-            //     btns.classList.add('starter')         
-            // }  
+
 
 //------CREATE 42 BUTTONS FOR GAME-------
 const createBtn = () => {
@@ -143,6 +142,17 @@ const createBtn = () => {
         btns.id = i+1
         btns.innerText = ' '
         // btns.innerText = i+1
+
+        // if (btns.id > 35 && btns.id < 43) {
+        //     btns.disabled = false      
+        // }  else {
+        //     btns.disabled = true
+        // }
+        // function enableTile() {
+        //     enable.forEach(() => {
+                                          
+        //     })
+        // }
         container.appendChild(btns)                  
     } 
         
@@ -153,6 +163,11 @@ const createBtn = () => {
         tileElement.addEventListener('click', (e) => {
                 // ----PLAYER 1 AND 2 FUNCTIONS-------
                 // currentPlayer = 0 then they are black, currentPlayer = 1 they are red
+
+                //enable.push(Number(e.target.id) - 7)
+                //console.log(Number(e.target.id) - 7)
+                //console.log(enable)
+                
                 if (currentPlayer === 0 && e.target.classList !== 'player-two') {
                     //on click the class of tile will change to .player-one with background color of black
                     // e.target.classList.contains('starter')
@@ -184,6 +199,9 @@ const createBtn = () => {
     })
 }
 
+
+        
+
 // display.innerText = 'testing display'
 //---WINNING CONDITIONS-----
 function winFunction () {
@@ -205,8 +223,6 @@ function winFunction () {
 }
 
 
-//writing a function that only allows tiles in the bottom row to be first and only allow other tiles to be clicked if the tile below is clicked(colored in)
-    //only if tile below is clicked/colored in, you can click the one on top of it
 
 //---RESET BUTTON----
 resetBtn.addEventListener('click', () => {
@@ -219,11 +235,9 @@ resetBtn.addEventListener('click', () => {
         playerOne = []
         playerTwo = []
         enableGame()
-        
     })
     // console.log('reset button console.logs')   
 })
-
 
 
 //!---INVOKE FUNCTIONS SECTION-----

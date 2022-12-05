@@ -34,4 +34,3 @@ The game logic is simple: connect four of the checkers in a row or diagonally wh
 
 ## Sources/Inspiration 
 * JS winFunction() logic credit: Jay Womack 
-* https://www.youtube.com/watch?v=aroYjgQH8Tw&t=1278s 
