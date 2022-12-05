@@ -130,6 +130,11 @@ changePlayer = () => {
     currentPlayer = currentPlayer === 0 ? 1 : 0
 }
 
+//function that only allows for the bottom row (btn 36-41) to be clicked on first
+            // if (btns.id = 36 && btns.id < 42) {
+            //     btns.classList.add('starter')         
+            // }  
+
 //------CREATE 42 BUTTONS FOR GAME-------
 const createBtn = () => {
     for (let i = 0; i < 42; i++) {
@@ -138,11 +143,7 @@ const createBtn = () => {
         btns.id = i+1
         btns.innerText = ' '
         // btns.innerText = i+1
-        container.appendChild(btns)
-        //if statement that only allows for the bottom row (btn 36-41) to be clicked on first
-            // if (btns.id = 36 && btns.id < 42) {
-            //     btns.classList.add('starter')         
-            // }            
+        container.appendChild(btns)                  
     } 
         
     tile = document.querySelectorAll('.tile') //node list 
