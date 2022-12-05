@@ -8,6 +8,13 @@ let tile
 let currentPlayer = 0
 let playerOne = []
 let playerTwo = []
+const disableGame = () => { 
+    tile.disabled = true
+} 
+const enableGame = () => { 
+    tile.disabled = false
+} 
+
 
 const winArr = [
 //west to east (24)
@@ -130,7 +137,7 @@ const createBtn = () => {
         container.appendChild(btns)
         //if statement that only allows for the bottom row (btn 36-41) to be clicked on first
             // if (btns.id = 36 && btns.id <42) {
-            //         btns.classList.add('starter')
+            //     btns.classList.add('starter')         
             // }            
     } 
         
@@ -139,28 +146,28 @@ const createBtn = () => {
     //array.from creates array from node list 
     Array.from(tile).forEach(tileElement => {
         tileElement.addEventListener('click', (e) => {
-            
-            
                 // ----PLAYER 1 AND 2 FUNCTIONS-------
                 // currentPlayer = 0 then they are black, currentPlayer = 1 they are red
                 if (currentPlayer === 0 && e.target.classList !== 'player-two') {
                     //on click the class of tile will change to .player-one with background color of black
-                    //e.target.classList.contains('starter')
+                    // e.target.classList.contains('starter')
                     e.target.classList.add('player-one')
                     e.target.disabled = true
                     e.target.innerText = 1
                     playerOne.push(Number(e.target.id))
                     console.log(playerOne)
-                    changePlayer()
-                } else if (e.target.classList !== 'player-one') {
+                    currentPlayer = 1
+                    // changePlayer()
+                } else if (currentPlayer === 1 && e.target.classList !== 'player-one') {
                     //the class of tile will change to .player-two with background color of red
-                    //e.target.classList.contains('starter')
+                    // e.target.classList.contains('starter')
                     e.target.classList.add('player-two') 
                     e.target.disabled = true
                     e.target.innerText = 2
                     playerTwo.push(Number(e.target.id))
                     console.log(playerTwo)
-                    changePlayer()
+                    currentPlayer = 0
+                    // changePlayer()
                 }
              
             // console.log(Number(e.target.id))
@@ -169,6 +176,7 @@ const createBtn = () => {
     })
 }
 
+display.innerText = 'testing display'
 //---WINNING CONDITIONS-----
 function winFunction () {
     //inside the winArr, for each value of i
@@ -178,13 +186,15 @@ function winFunction () {
             // tile.forEach((button) => {
             //     button.setAttribute('disabled', 'true')
             // }) 
+            disableGame()
             display.innerText = 'Black Player wins'
         } else if (i.every((j)=> playerOne.includes(j))) {
             // tile.forEach((button) => {
             //     button.setAttribute('disabled', 'true')
             // }) 
+            disableGame()
             display.innerText = 'Red Player wins'
-        } else if (winArr === 42) {
+        } else if (playerOne.length === 21 && playerTwo.length === 21 ) {
             // tile.forEach((button) => {
             //     button.setAttribute('disabled', 'true')
             // }) 
@@ -206,6 +216,7 @@ resetBtn.addEventListener('click', () => {
         tile.disabled = false
         playerOne
         playerTwo
+        enableGame()
         // currentPlayer
     })
     // console.log('reset button console.logs')   
