@@ -8,6 +8,7 @@ let tile
 let currentPlayer = 0
 let playerOne = []
 let playerTwo = []
+
 const winArr = [
 //west to east (24)
     //Row 1
@@ -103,7 +104,8 @@ const winArr = [
     [11,17,23,29],
     [4,10,16,22]
 ]
-console.log(playerOne)
+
+// console.log(playerOne)
 //----H1 TITLE-----
 const addH1 = () => {
     const h1 = document.createElement('h1')
@@ -111,7 +113,7 @@ const addH1 = () => {
     document.querySelector('body').prepend(h1)
 }
 
-//---Change player funtion----
+//---Change player function----
 changePlayer = () => { 
     // current player is 1, else player is 0 
     currentPlayer = currentPlayer === 0 ? 1 : 0
@@ -129,8 +131,7 @@ const createBtn = () => {
         //if statement that only allows for the bottom row (btn 36-41) to be clicked on first
             // if (btns.id = 36 && btns.id <42) {
             //         btns.classList.add('starter')
-            // }
-            
+            // }            
     } 
         
     tile = document.querySelectorAll('.tile') //node list 
@@ -201,12 +202,11 @@ resetBtn.addEventListener('click', () => {
     const selector = document.querySelectorAll('.tile')
     selector.forEach(tile => {
         tile.classList.remove('player-one', 'player-two')
-        // tile.style.backgroundColor = 'white'
         tile.innerText = '' 
         tile.disabled = false
-        playerOne 
-        playerTwo 
-        currentPlayer
+        playerOne
+        playerTwo
+        // currentPlayer
     })
     // console.log('reset button console.logs')   
 })
