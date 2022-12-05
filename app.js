@@ -8,11 +8,15 @@ let tile
 let currentPlayer = 0
 let playerOne = []
 let playerTwo = []
-const disableGame = () => { 
-    tile.disabled = true
+function disableGame()  { 
+    tile.forEach(button => {
+        button.disabled = true
+    })
 } 
-const enableGame = () => { 
-    tile.disabled = false
+function enableGame() { 
+    tile.forEach(button => {
+        button.disabled = false
+    })
 } 
 
 
@@ -136,7 +140,7 @@ const createBtn = () => {
         // btns.innerText = i+1
         container.appendChild(btns)
         //if statement that only allows for the bottom row (btn 36-41) to be clicked on first
-            // if (btns.id = 36 && btns.id <42) {
+            // if (btns.id = 36 && btns.id < 42) {
             //     btns.classList.add('starter')         
             // }            
     } 
@@ -157,6 +161,7 @@ const createBtn = () => {
                     playerOne.push(Number(e.target.id))
                     console.log(playerOne)
                     currentPlayer = 1
+                    winFunction()
                     // changePlayer()
                 } else if (currentPlayer === 1 && e.target.classList !== 'player-one') {
                     //the class of tile will change to .player-two with background color of red
@@ -167,40 +172,38 @@ const createBtn = () => {
                     playerTwo.push(Number(e.target.id))
                     console.log(playerTwo)
                     currentPlayer = 0
+                    winFunction()
                     // changePlayer()
                 }
-             
+            
             // console.log(Number(e.target.id))
             console.log(e.target)
         })
+        
     })
 }
 
-display.innerText = 'testing display'
+// display.innerText = 'testing display'
 //---WINNING CONDITIONS-----
 function winFunction () {
     //inside the winArr, for each value of i
     winArr.forEach((i) => {
         //cycles thru winArr and if the values in playerOne or two array match the values in winArr (.every cycles thru array and returns boolean value)
         if (i.every((j)=> playerOne.includes(j))) {
-            // tile.forEach((button) => {
-            //     button.setAttribute('disabled', 'true')
-            // }) 
             disableGame()
             display.innerText = 'Black Player wins'
-        } else if (i.every((j)=> playerOne.includes(j))) {
-            // tile.forEach((button) => {
-            //     button.setAttribute('disabled', 'true')
-            // }) 
+        } else if (i.every((j)=> playerTwo.includes(j))) { 
             disableGame()
             display.innerText = 'Red Player wins'
         } else if (playerOne.length === 21 && playerTwo.length === 21 ) {
             // tile.forEach((button) => {
             //     button.setAttribute('disabled', 'true')
             // }) 
+            disableGame()
             display.innerText = 'Tie Game'
         }
     })
+    
 }
 
 
@@ -213,9 +216,10 @@ resetBtn.addEventListener('click', () => {
     selector.forEach(tile => {
         tile.classList.remove('player-one', 'player-two')
         tile.innerText = '' 
-        tile.disabled = false
-        playerOne
-        playerTwo
+        tile.disabled = false 
+        display.innerText = ''
+        playerOne = []
+        playerTwo = []
         enableGame()
         // currentPlayer
     })
@@ -227,7 +231,9 @@ resetBtn.addEventListener('click', () => {
 //!---INVOKE FUNCTIONS SECTION-----
 addH1()
 createBtn()
-winFunction()
+
+
+
 
 
 
