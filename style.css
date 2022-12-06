@@ -46,6 +46,10 @@ table {
 body {
     background-color: silver;
     background-image: url('https://wallpaperaccess.com/full/4982.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -76,7 +80,7 @@ h1 {
     width: 965px;
     height: 800px;
     padding: 10px;
-    margin: 50px 0px 25px 775px;
+    /* margin: 50px 0px 25px 775px; */
     border: 15px outset gold;
     background-color: rgb(38, 103, 157);
 }
