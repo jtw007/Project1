@@ -19,7 +19,7 @@ function enableGame() {
         button.disabled = false
     })
 } 
-
+//winning conditions array
 const winArr = [
 //west to east (24)
     //Row 1
