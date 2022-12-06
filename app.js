@@ -168,35 +168,34 @@ const createBtn = () => {
                 //console.log(Number(e.target.id) - 7)
                 //console.log(enable)
                 
-                if (currentPlayer === 0 && e.target.classList !== 'player-two') {
-                    //on click the class of tile will change to .player-one with background color of black
-                    // e.target.classList.contains('starter')
-                    e.target.classList.add('player-one')
-                    e.target.disabled = true
-                    e.target.innerText = 1
-                    playerOne.push(Number(e.target.id))
-                    console.log(playerOne)
-                    currentPlayer = 1
-                    winFunction()
-                    // changePlayer()
-                } else if (currentPlayer === 1 && e.target.classList !== 'player-one') {
-                    //the class of tile will change to .player-two with background color of red
-                    // e.target.classList.contains('starter')
-                    e.target.classList.add('player-two') 
-                    e.target.disabled = true
-                    e.target.innerText = 2
-                    playerTwo.push(Number(e.target.id))
-                    console.log(playerTwo)
-                    currentPlayer = 0
-                    winFunction()
-                    // changePlayer()
-                }
-            
+            if (currentPlayer === 0 && e.target.classList !== 'player-two') {
+                //on click the class of tile will change to .player-one with background color of black
+                // e.target.classList.contains('starter')
+                e.target.classList.add('player-one')
+                e.target.disabled = true
+                e.target.innerText = 1
+                playerOne.push(Number(e.target.id))
+                console.log(playerOne)
+                currentPlayer = 1
+                winFunction()
+                // changePlayer()
+            } else if (currentPlayer === 1 && e.target.classList !== 'player-one') {
+                //the class of tile will change to .player-two with background color of red
+                // e.target.classList.contains('starter')
+                e.target.classList.add('player-two') 
+                e.target.disabled = true
+                e.target.innerText = 2
+                playerTwo.push(Number(e.target.id))
+                console.log(playerTwo)
+                currentPlayer = 0
+                winFunction()
+                // changePlayer()
+            }           
             // console.log(Number(e.target.id))
             console.log(e.target)
-        })
-        
+        })        
     })
+    
 }
 
 
