@@ -217,8 +217,7 @@ function winFunction () {
             disableGame()
             display.innerText = 'Tie Game'
         }
-    })
-    
+    })  
 }
 
 
