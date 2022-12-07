@@ -34,9 +34,11 @@ https://jtw007.github.io/Project1/
 
 ## Post-Project Reflection/Approach taken
 --Approach--
+
 The approach I took to creating this project was first creating a text document (planning doc.txt in this case) and putting as much pseudo code in there as I could in one sitting, on top of organizing my HTML, CSS, and JS code by using comments indicating the start and end of specific sections. The reason for doing this was because I realized during the TTT deliverable that pseudo coding made it easier to not only structure the coding process and making it easier to work, but also to ask questions. Being in the learning stage, I found it difficult to word the questions despite not understanding certain concepts or being stuck on a problem. 
 
 --Reflection--
+
 This time around, I learned from my previous mistakes made during TTT and previous deliverables and applied what I learned here. The said mistakes being: not planning out at the beginning by pseudo coding of any sort, not asking for help/reaching out when it was necessary, and trying to build everything out in one go and trying to fix errors there. I made the last mistake during the TTT when I tried to structure all of the JavaScript functions and I ended up being overwhelmed by all the errors/non-functionality, which further contributed to my frustration and resulted in me quitting early. This time around, I decided to turn the frustration into motivation to solve the problem as best I could and then reaching out for assistance when I could not solve the problem on my own. 
 
 My reasoning for choosing Connect 4 as my Project 1 idea was due to the fact that I had left the TTT deliverable so unfinished, I felt that my JS skills in that area were left weak and I wanted to strengthen/sharpen them by doing this project. As a result, the areas I struggled in were similar to the problems I struggled with in TTT. I struggled with setting up the JS functionality that would alternate between players so that only one player could click the game object at a time. 
